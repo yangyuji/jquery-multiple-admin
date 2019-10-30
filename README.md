@@ -1,2 +1,4 @@
 # jquery-multiple-admin
-A multiple pages admin template base on webpack4 + babel + sass + jquery
+A Multi Page Application base on webpack4 + babel + sass + jquery + layui.
+
+[preview](https://yangyuji.github.io/jquery-multiple-admin/)
