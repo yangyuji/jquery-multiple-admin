@@ -70,14 +70,18 @@ body, html {
           background-color: rgba(32, 91, 158, .3);
         }
 
-        .layui-this {
-          background-color: transparent;
-        }
-
         .layui-nav-child {
-          background-color: transparent !important;
+          background-color: transparent;
           border-bottom: rgba(255, 255, 255, .2) solid 1px;
           padding: 10px 0;
+
+          .layui-this {
+            // background-color: transparent;
+
+            > a {
+              color: #fff;
+            }
+          }
 
           a {
             background: none !important;

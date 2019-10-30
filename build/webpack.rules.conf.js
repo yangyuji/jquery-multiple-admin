@@ -29,7 +29,7 @@ const rules = [
       // 需要下载url-loader
       loader: "url-loader",
       options: {
-        limit: 5 * 1024, // 小于时将会已base64位图片打包处理
+        limit: 1, // 小于时将会已base64位图片打包处理
         name: util.assetsPath('img/[name].[hash:5].[ext]')
       }
     }]

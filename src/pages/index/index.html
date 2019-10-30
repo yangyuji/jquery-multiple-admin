@@ -9,6 +9,7 @@
   <meta name="description" content="OA系统">
   <title>OA系统</title>
   <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./static/css/common.css">
   <link rel="stylesheet" type="text/css" href="./static/js/layui/css/layui.css">
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -46,10 +47,12 @@
           <dd><a href="">安全设置</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="">
-        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
-        退出
-      </a></li>
+      <li class="layui-nav-item">
+        <a href="./login.html">
+          <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
+          退出
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -60,22 +63,22 @@
         <li class="layui-nav-item layui-nav-itemed">
           <a href="javascript:;"><i class="fa fa-file-text fa-fw"></i> 日常工作</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;" target="main_frame">列表一</a></dd>
-            <dd><a href="javascript:;" target="main_frame">列表二</a></dd>
-            <dd><a href="javascript:;" target="main_frame">列表三</a></dd>
-            <dd><a href="">超链接</a></dd>
+            <dd><a href="./iframe/table.html" target="main_frame">表格样式</a></dd>
+            <dd><a href="./iframe/form.html" target="main_frame">表单样式</a></dd>
+            <dd><a href="./iframe/side-menu.html" target="main_frame">子菜单项</a></dd>
+            <dd><a href="./iframe/side-menu.html" target="main_frame" >超链接</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;"><i class="fa fa-sitemap fa-fw"></i> 组织架构</a>
           <dl class="layui-nav-child">
-            <dd><a href="javascript:;" target="main_frame">列表一</a></dd>
-            <dd><a href="javascript:;" target="main_frame">列表二</a></dd>
-            <dd><a href="" target="main_frame">超链接</a></dd>
+            <dd><a href="javascript:;" target="main_frame">样式一</a></dd>
+            <dd><a href="javascript:;" target="main_frame">样式二</a></dd>
+            <dd><a href="javascript:;" target="main_frame">样式三</a></dd>
           </dl>
         </li>
-        <li class="layui-nav-item"><a href="" target="main_frame"><i class="fa fa-area-chart fa-fw"></i> 数据统计</a></li>
-        <li class="layui-nav-item"><a href="" target="main_frame"><i class="fa fa-area-chart fa-fw"></i> 发布内容</a></li>
+        <li class="layui-nav-item"><a href="javascript:;" target="main_frame"><i class="fa fa-area-chart fa-fw"></i> 数据统计</a></li>
+        <li class="layui-nav-item"><a href="javascript:;" target="main_frame"><i class="fa fa-area-chart fa-fw"></i> 发布内容</a></li>
       </ul>
     </div>
   </div>
@@ -88,16 +91,15 @@
     </div>
     <!-- iframe -->
     <iframe class="content-iframe"
-            src="./iframe/page3.html"
+            src="./iframe/table.html"
             name="main_frame"
             frameborder="0"
             scrolling="yes"></iframe>
   </div>
 
-  <div class="layui-footer">
-    <!-- 底部固定区域 -->
+  <!--div class="layui-footer">
     © layui.com - 底部固定区域
-  </div>
+  </div-->
 
 </div>
 <script src="./static/js/layui/layui.js"></script>

@@ -24,7 +24,8 @@ const webpackConfigProd = {
     }),
     // 分离css插件参数为提取出去的路径
     new extractTextPlugin({
-      filename: util.assetsPath('css/[name].[hash:5].css')
+      filename: util.assetsPath('css/[name].[hash:5].css'),
+      // allChunks: false
     }),
     //压缩css
     new OptimizeCSSPlugin({

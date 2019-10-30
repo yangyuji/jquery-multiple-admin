@@ -64,7 +64,7 @@ module.exports = {
   },
   //将外部变量或者模块加载进来
   externals: {
-    'jquery': 'jQuery',
+    'jQuery': 'jQuery',
     'layui': 'layui'
   },
   // 提取公共代码

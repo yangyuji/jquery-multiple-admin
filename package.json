@@ -1,7 +1,7 @@
 {
-  "name": "webpack4-mpa",
+  "name": "jquery-multiple-admin",
   "version": "1.0.0",
-  "description": "A Multi Page Application base on webpack4 + babel + sass",
+  "description": "A Multi Page Application base on webpack4 + babel + sass + jquery + layui",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js ",
@@ -10,9 +10,6 @@
   },
   "author": "yangyuji",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "^3.4.1"
-  },
   "devDependencies": {
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
@@ -56,8 +53,6 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "> 1%"
   ]
 }

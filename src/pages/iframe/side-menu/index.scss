@@ -1,0 +1,83 @@
+body {
+  background: rgb(238, 238, 238);
+  font-family: SimSun, 宋体, 华文细黑, STHeiti, MingLiu !important;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.layui-flex {
+  display: flex;
+}
+
+/* 子侧边 */
+.layui-side-child {
+  position: relative;
+  display: block;
+  width: 160px;
+  border: 1px solid #eee;
+  border-left: 0;
+  background-color: #fff;
+
+  .layui-side-scroll {
+    width: 170px;
+  }
+
+  .layui-nav {
+    padding: 10px 0;
+    width: 160px;
+    border-radius: 0;
+    background: none;
+
+    .layui-nav-item a {
+      height: 30px;
+      line-height: 30px;
+      color: #666;
+
+      &:hover {
+        background: none !important;
+      }
+    }
+
+    .layui-nav-bar {
+      background-color: #5FB878;
+    }
+
+    .layui-nav-title a,
+    .layui-nav-title a:hover {
+      color: #666 !important;
+    }
+  }
+
+  .layui-nav-tree .layui-this,
+  .layui-nav-tree .layui-this > a,
+  .layui-nav-tree .layui-nav-child dd.layui-this,
+  .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background: none;
+    color: #5FB878 !important;
+  }
+
+  .layui-nav-itemed > a {
+    color: #666 !important;
+
+    .layui-nav-child {
+      margin-bottom: 10px;
+      background: none !important;
+    }
+  }
+
+  .layui-nav-child {
+    border-radius: 0;
+
+    a {
+      color: #999 !important;
+      &:hover {
+        color: #009688 !important
+      }
+    }
+  }
+}
