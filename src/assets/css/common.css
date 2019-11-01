@@ -344,3 +344,12 @@ q:before, q:after {
   background-color: #fff;
 }
 
+/* ----- layui css reset ----- */
+.layui-btn,
+.layui-input,
+.layui-select,
+.layui-textarea,
+.layui-upload-button {
+  transition: none!important;
+}
+
