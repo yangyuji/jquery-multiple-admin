@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-$--top-header-height: 80px; // 顶部高度
+$--top-header-height: 60px; // 顶部高度
 $--left-side-width: 220px; // 左侧菜单栏宽度
 $--left-side-scroll-width: 240px; // 左侧菜单栏宽度 + 20
 
@@ -22,21 +22,27 @@ body, html {
     background-color: rgba(0, 0, 0, .2);
 
     .layui-logo {
-      width: 400px;
+      width: 200px;
       text-align: left;
 
       img {
-        margin: 28px 0 20px 20px;
+        margin-left: 20px;
       }
     }
 
     .layui-nav.layui-layout-left {
-      left: 400px;
-      margin-top: 15px;
+      left: 200px;
     }
 
     .layui-nav.layui-layout-right {
-      margin-top: 15px;
+      > .layui-nav-item a {
+        padding: 0 15px;
+      }
+      .layui-badge {
+        position: relative;
+        margin: 0;
+        padding: 0 3px;
+      }
     }
   }
 
@@ -89,6 +95,10 @@ body, html {
             line-height: 40px;
             text-indent: 1.5em;
             height: 40px;
+
+            &.layui-nav-item__subtitle {
+              text-indent: 0.1em;
+            }
           }
         }
       }
