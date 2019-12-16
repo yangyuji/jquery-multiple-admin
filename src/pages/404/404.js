@@ -1,4 +1,4 @@
-import './index.scss'
+import './404.scss'
 import $ from "jQuery";
 
 $(function () {

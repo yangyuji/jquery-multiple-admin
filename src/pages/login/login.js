@@ -1,4 +1,4 @@
-import './index.scss'
+import './login.scss'
 import $ from 'jQuery'
 
 $(function () {

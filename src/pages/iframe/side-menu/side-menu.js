@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./side-menu.scss";
 import $ from "jQuery"
 
 $(function () {

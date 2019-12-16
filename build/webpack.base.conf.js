@@ -13,18 +13,25 @@ const util = require("./utils");
 
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function (name, chunks) {
+  // 深层目录
+  let [fileName, filePath] = [name, name]
+  if (name.indexOf('/') >= 0) {
+    const arr = name.split('/')
+    fileName = arr[arr.length - 1]
+  }
   return {
-    template: `./src/pages/${name}/index.html`,
-    filename: `${name}.html`,
+    template: `./src/pages/${filePath}/${fileName}.html`,
+    filename: `${filePath}.html`,
     inject: true,
     hash: false, //开启hash  ?[hash]
     chunks: chunks,
-    minify: process.env.NODE_ENV === "development" ? false : {
+    minify: false, //不压缩html，压缩可参考下一行
+    /* minify: process.env.NODE_ENV === "development" ? false : {
       removeComments: true, //移除HTML中的注释
       collapseWhitespace: true, //折叠空白区域 也就是压缩代码
       removeAttributeQuotes: true, //去除属性引用
-    },
-  };
+    }*/
+  }
 };
 
 function getEntry() {

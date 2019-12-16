@@ -1,4 +1,158 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=renderer content=webkit><meta name=force-rendering content=webkit><meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=OA系统><title>OA系统</title><link rel=stylesheet type=text/css href=./static/css/common.css><link rel=stylesheet type=text/css href=./static/js/layui/css/layui.css><link href=//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><!--[if lt IE 9]>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OA系统">
+  <title>OA系统</title>
+  <link rel="stylesheet" type="text/css" href="./static/css/common.css">
+  <link rel="stylesheet" type="text/css" href="./static/js/layui/css/layui.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
   <script src="//cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
   <script src="//cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]--><link href=/jquery-multiple-admin/static/css/index.8f170.css rel=stylesheet></head><body class=layui-layout-body><div class="layui-layout layui-layout-admin reset-layout"><div class=layui-header><div class=layui-logo><img src=/jquery-multiple-admin/static/img/logotxt.1e3b8.png> <img src=/jquery-multiple-admin/static/img/word.181f8.png></div><ul class="layui-nav layui-layout-left"><li class=layui-nav-item><a href="">控制台</a></li><li class=layui-nav-item><a href="">权限管理</a></li><li class=layui-nav-item><a href="">用户</a></li><li class=layui-nav-item><a href=javascript:;>其它系统</a><dl class=layui-nav-child><dd><a href="">邮件管理</a></dd><dd><a href="">消息管理</a></dd><dd><a href="">授权管理</a></dd></dl></li></ul><ul class="layui-nav layui-layout-right"><li class=layui-nav-item><a href=javascript:;><i class="fa fa-user-circle-o fa-fw" aria-hidden=true></i> 羊羽集</a><dl class=layui-nav-child><dd><a href="">基本资料</a></dd><dd><a href="">安全设置</a></dd></dl></li><li class=layui-nav-item><a href=./login.html><i class="fa fa-sign-out fa-fw" aria-hidden=true></i> 退出</a></li></ul></div><div class="layui-side layui-bg-black"><div class=layui-side-scroll><ul class="layui-nav layui-nav-tree" lay-filter=test><li class="layui-nav-item layui-nav-itemed"><a href=javascript:;><i class="fa fa-file-text fa-fw"></i> 日常工作</a><dl class=layui-nav-child><dd><a href=./iframe/table.html target=main_frame>表格样式</a></dd><dd><a href=./iframe/form.html target=main_frame>表单样式</a></dd><dd><a href=./iframe/side-menu.html target=main_frame>子菜单项</a></dd><dd><a href=./iframe/side-menu.html target=main_frame>超链接</a></dd></dl></li><li class=layui-nav-item><a href=javascript:;><i class="fa fa-sitemap fa-fw"></i> 组织架构</a><dl class=layui-nav-child><dd><a href=javascript:; target=main_frame>样式一</a></dd><dd><a href=javascript:; target=main_frame>样式二</a></dd><dd><a href=javascript:; target=main_frame>样式三</a></dd></dl></li><li class=layui-nav-item><a href=javascript:; target=main_frame><i class="fa fa-area-chart fa-fw"></i> 数据统计</a></li><li class=layui-nav-item><a href=javascript:; target=main_frame><i class="fa fa-area-chart fa-fw"></i> 发布内容</a></li></ul></div></div><div class=layui-body><div class="open_shrink open" title=展开/收起><span></span></div><iframe class=content-iframe src=./iframe/table.html name=main_frame frameborder=0 scrolling=yes></iframe></div></div><script src=./static/js/layui/layui.js></script><script src=./static/js/jquery.min.js></script><script type=text/javascript src=/jquery-multiple-admin/static/js/vendor.8f170.js></script><script type=text/javascript src=/jquery-multiple-admin/static/js/index.8f170.js></script></body></html>
+  <![endif]-->
+<link href="/jquery-multiple-admin/static/css/index.906f7.css" rel="stylesheet"></head>
+
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin reset-layout">
+  <div class="layui-header">
+    <div class="layui-logo">
+      <img src="/jquery-multiple-admin/static/img/logotxt.1e3b8.png">
+    </div>
+
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">权限管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它系统</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="./login.html"><i class="layui-icon layui-icon-speaker" aria-hidden="true"></i>
+          通知 <span class="layui-badge">19+</span></a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="./login.html"><i class="layui-icon layui-icon-note" aria-hidden="true"></i>
+          便签 <span class="layui-badge-dot"></span></a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+          羊羽集
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href=""><i class="layui-icon layui-icon-username"></i> 基本资料</a></dd>
+          <dd><a href=""><i class="layui-icon layui-icon-set"></i> 安全设置</a></dd>
+          <dd>
+            <a href="./login.html"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>安全退出</a>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;"><i class="fa fa-file-text fa-fw"></i> 日常工作</a>
+          <dl class="layui-nav-child">
+            <dd><a href="./iframe/table.html" target="main_frame">表格样式</a></dd>
+            <dd><a href="./iframe/form.html" target="main_frame">表单样式</a></dd>
+            <dd><a href="./iframe/side-menu.html" target="main_frame">子菜单项</a></dd>
+            <dd><a href="./iframe/side-menu.html" target="main_frame" >超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><i class="layui-icon layui-icon-template"></i> 三级菜单</a>
+          <dl class="layui-nav-child">
+            <dd data-name="panel">
+              <a class="layui-nav-item__subtitle" href="javascript:;">
+                <i class="layui-icon layui-icon-template"></i> 公文管理
+              </a>
+              <dl class="layui-nav-child">
+                <dd><a href="./iframe/table.html" target="main_frame">待阅公文</a></dd>
+                <dd><a href="./iframe/table.html" target="main_frame">已阅公文</a></dd>
+                <dd><a href="./iframe/form.html" target="main_frame">查阅公文</a></dd>
+                <dd><a href="./iframe/form.html" target="main_frame">公文调试</a></dd>
+              </dl>
+            </dd>
+            <dd><a href="javascript:;" target="main_frame">样式一</a></dd>
+            <dd><a href="javascript:;" target="main_frame">样式二</a></dd>
+            <dd><a href="javascript:;" target="main_frame">样式三</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;"><i class="fa fa-sitemap fa-fw"></i> 组织架构</a>
+          <dl class="layui-nav-child">
+            <dd>
+              <a class="layui-nav-item__subtitle" href="javascript:;" target="main_frame">
+                <i class="fa fa-sitemap fa-fw"></i> 华中大区
+              </a>
+              <dl class="layui-nav-child">
+                <dd><a href="./iframe/table.html" target="main_frame">湖南地区</a></dd>
+                <dd><a href="./iframe/table.html" target="main_frame">湖北地区</a></dd>
+                <dd><a href="./iframe/form.html" target="main_frame">贵州地区</a></dd>
+              </dl>
+            </dd>
+            <dd>
+              <a class="layui-nav-item__subtitle" href="javascript:;" target="main_frame">
+                <i class="fa fa-sitemap fa-fw"></i> 两广大区
+              </a>
+              <dl class="layui-nav-child">
+                <dd><a href="./iframe/table.html" target="main_frame">广州地区</a></dd>
+                <dd><a href="./iframe/table.html" target="main_frame">广西地区</a></dd>
+              </dl>
+            </dd>
+            <dd>
+              <a class="layui-nav-item__subtitle" href="javascript:;" target="main_frame">
+                <i class="fa fa-sitemap fa-fw"></i> 华北大区
+              </a>
+              <dl class="layui-nav-child">
+                <dd><a href="./iframe/table.html" target="main_frame">山东地区</a></dd>
+                <dd><a href="./iframe/table.html" target="main_frame">安徽地区</a></dd>
+              </dl>
+            </dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="javascript:;" target="main_frame"><i class="fa fa-area-chart fa-fw"></i> 数据统计</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <!-- 展开收起按钮 -->
+    <div class="open_shrink open" title="展开/收起">
+      <span></span>
+    </div>
+    <!-- iframe -->
+    <iframe class="content-iframe"
+            src="./iframe/table.html"
+            name="main_frame"
+            frameborder="0"
+            scrolling="yes"></iframe>
+  </div>
+
+  <!--div class="layui-footer">
+    © layui.com - 底部固定区域
+  </div-->
+
+</div>
+<script src="./static/js/layui/layui.js"></script>
+<script src="./static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/jquery-multiple-admin/static/js/vendor.906f7.js"></script><script type="text/javascript" src="/jquery-multiple-admin/static/js/index.906f7.js"></script></body>
+</html>

@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./table.scss";
 import $ from "jQuery"
 
 $(function () {

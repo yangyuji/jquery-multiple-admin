@@ -53,8 +53,7 @@ const rules = [
     use: {
       loader: 'html-loader',
       options: {
-        attrs: ['img:src', 'img:data-src', 'audio:src'],
-        minimize: true
+        attrs: ['img:src', 'img:data-src', 'audio:src']
       }
     }
   }

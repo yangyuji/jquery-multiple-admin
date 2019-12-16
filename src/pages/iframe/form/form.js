@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./form.scss";
 import $ from "jQuery"
 
 $(function () {
