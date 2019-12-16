@@ -123,5 +123,7 @@ Object.keys(entryObj).forEach(element => {
 
 //自动生成html模板
 htmlArray.forEach((element) => {
-  module.exports.plugins.push(new htmlWebpackPlugin(getHtmlConfig(element._html, element.chunks)));
+  module.exports.plugins.push(
+    new htmlWebpackPlugin(getHtmlConfig(element._html, element.chunks))
+  );
 })

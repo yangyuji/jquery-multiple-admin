@@ -315,6 +315,18 @@ q:before, q:after {
   content: none;
 }
 
+body {
+  background: rgb(238, 238, 238);
+  font-family: SimSun, 宋体, 华文细黑, STHeiti, MingLiu !important;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .hide {
   display: none !important;
 }
@@ -335,6 +347,7 @@ q:before, q:after {
 }
 
 .main-content {
+  position: relative;
   box-sizing: border-box;
   width: calc(100% - 20px);
   min-height: calc(100% - 20px);
@@ -342,6 +355,27 @@ q:before, q:after {
   padding: 0 20px;
   box-shadow: 0 0 7px #b7b7b7;
   background-color: #fff;
+}
+
+.main-content .layui-breadcrumb {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  margin-bottom: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.main-content .content-scroll {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  padding: 10px 20px 20px 20px;
+  height: calc(100% - 80px);
+  overflow: auto;
+  z-index: 99;
 }
 
 /* ----- layui css reset ----- */
