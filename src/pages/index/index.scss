@@ -15,7 +15,7 @@ body, html {
   position: relative;
 }
 
-.layui-layout.reset-layout {
+.reset-layout {
 
   .layui-header {
     height: $--top-header-height;
@@ -26,7 +26,7 @@ body, html {
       text-align: left;
 
       img {
-        margin-left: 20px;
+        margin-left: 50px;
       }
     }
 

@@ -140,13 +140,13 @@
       <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
       <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
       <div class="layui-icon layadmin-tabs-control layui-icon-down">
-        <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
+        <ul id="layadmin-pagetabs-nav" class="layui-nav layadmin-tabs-select">
           <li class="layui-nav-item" lay-unselect>
             <a href="javascript:;"></a>
             <dl class="layui-nav-child layui-anim-fadein">
-              <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
-              <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
-              <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
+              <dd data-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
+              <dd data-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
+              <dd data-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
             </dl>
           </li>
         </ul>

@@ -47,6 +47,36 @@ const oa = {
     $('#LAY_app_tabsheader').on('click', '.layui-tab-close', function (e) {
       console.log(11111, e.target)
     })
+
+    // 点击关闭其他选项卡
+    $('#layadmin-pagetabs-nav').on('click', 'a', function(e){
+      const dd = $(this).parent()
+      dd.removeClass('layui-this')
+      dd.parent().removeClass('layui-show')
+      const cmd = dd.data('event')
+
+
+      if (cmd === 'closeThisTabs') {
+        const cur_header = $('#LAY_app_tabsheader ' + '.layui-this')
+        const cur_body = $('#LAY_app_body ' + '.layui-show')
+        cur_header.prev().addClass('layui-this')
+        cur_header.not('li[lay-id=desktop]').remove()
+        cur_body.prev().addClass('layui-show')
+        cur_body.not('#tabsbody-item-desktop').remove()
+      }
+      if (cmd === 'closeOtherTabs') {
+        $('#LAY_app_tabsheader li:not(.layui-this)').not('li[lay-id=desktop]').remove()
+        $('#LAY_app_body .layadmin-tabsbody-item:not(.layui-show)').not('#tabsbody-item-desktop').remove()
+      }
+      if (cmd === 'closeAllTabs') {
+        const tab_header = $('#LAY_app_tabsheader li')
+        const tab_body = $('#LAY_app_body .layadmin-tabsbody-item')
+        tab_header.not('li[lay-id=desktop]').remove()
+        tab_body.not('#tabsbody-item-desktop').remove()
+        $('li[lay-id=desktop]').addClass('layui-this')
+        $('#tabsbody-item-desktop').addClass('layui-show')
+      }
+    })
     
     //监听导航点击
     $('.layui-nav-child').on('click', 'a', function() {
