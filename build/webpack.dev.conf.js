@@ -11,7 +11,7 @@ const webpackConfigDev = {
   devServer: {
     contentBase: path.join(__dirname, "../src/pages/index"),
     publicPath: '/',
-    host: "127.0.0.1",
+    host: "0.0.0.0",
     port: "8080",
     overlay: true, // 浏览器页面上显示错误
     open: true, // 开启浏览器
