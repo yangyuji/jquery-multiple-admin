@@ -11,13 +11,21 @@ $(function () {
 
 const oa = {
   init() {
-    layui.use('element')
+    const that = this
+    layui.use('element', function () {
+      const element = layui.element
+      element.on('tab(layadmin-layout-tabs)', function(data){
+        that.tabChange($(this).attr('lay-id'))
+      })
+      element.on('tabDelete(layadmin-layout-tabs)', function(data){
+        console.log(data.index)
+      })
+    })
     this.addEventListener()
   },
   tabChange(id) {
-    const element = layui.element
-    element.tabChange('layadmin-layout-tabs', id);
     $('#LAY_app_body ' + '#tabsbody-item-' + id).addClass('layui-show').siblings().removeClass('layui-show')
+    this.scrollTabHeader('auto', id)
   },
   tabAdd(opt) {
     const element = layui.element
@@ -35,21 +43,74 @@ const oa = {
     //标题切换到选项卡
     element.tabChange('layadmin-layout-tabs', opt.id)
   },
+  scrollTabHeader(type, id){
+    var tabsHeader = $('#LAY_app_tabsheader')
+      ,liItem = tabsHeader.children('li')
+      ,outerWidth = tabsHeader.outerWidth()
+      ,tabsLeft = parseFloat(tabsHeader.css('left'))
+
+    // 往左滚动
+    if(type === 'left'){
+      if(!tabsLeft && tabsLeft <=0) return
+
+      //当前的left减去可视宽度，用于与上一轮的页标比较
+      var  prefLeft = -tabsLeft - outerWidth
+
+      liItem.each(function(index, item) {
+        var li = $(item)
+          ,left = li.position().left
+
+        if(left >= prefLeft){
+          tabsHeader.css('left', -left)
+          return false
+        }
+      });
+    } else if(type === 'auto'){ //自动滚动
+      (function() {
+        var thisLi = $('#LAY_app_tabsheader').find("li[lay-id=" + id + "]"), thisLeft
+
+        if(!thisLi[0]) return;
+        thisLeft = thisLi.position().left
+
+        //当目标标签在可视区域左侧时
+        if(thisLeft < -tabsLeft) {
+          return tabsHeader.css('left', -thisLeft)
+        }
+
+        //当目标标签在可视区域右侧时
+        if(thisLeft + thisLi.outerWidth() >= outerWidth - tabsLeft) {
+          var subLeft = thisLeft + thisLi.outerWidth() - (outerWidth - tabsLeft)
+          liItem.each(function(i, item) {
+            var li = $(item), left = li.position().left
+
+            //从当前可视区域的最左第二个节点遍历，如果减去最左节点的差 > 目标在右侧不可见的宽度，则将该节点放置可视区域最左
+            if(left + tabsLeft > 0) {
+              if(left - tabsLeft > subLeft) {
+                tabsHeader.css('left', -left)
+                return false
+              }
+            }
+          })
+        }
+      }())
+    } else {
+      //默认向左滚动
+      liItem.each(function(i, item) {
+        var li = $(item)
+          ,left = li.position().left
+
+        if(left + li.outerWidth() >= outerWidth - tabsLeft) {
+          tabsHeader.css('left', -left)
+          return false
+        }
+      })
+    }
+  },
   addEventListener() {
     const that = this
 
-    // 点击tab
-    $('#LAY_app_tabsheader').on('click', 'li', function () {
-      that.tabChange($(this).attr('lay-id'))
-    })
-
-    // 点击关闭tab
-    $('#LAY_app_tabsheader').on('click', '.layui-tab-close', function (e) {
-      console.log(11111, e.target)
-    })
-
     // 点击关闭其他选项卡
-    $('#layadmin-pagetabs-nav').on('click', 'a', function(e){
+    $('#layadmin-pagetabs-nav').on('click', 'a', function() {
       const dd = $(this).parent()
       dd.removeClass('layui-this')
       dd.parent().removeClass('layui-show')
@@ -77,13 +138,21 @@ const oa = {
         $('#tabsbody-item-desktop').addClass('layui-show')
       }
     })
+
+    // 滚动tab标签栏
+    $('.layui-icon-next').on('click', function() {
+      that.scrollTabHeader()
+    })
+    $('.layui-icon-prev').on('click', function() {
+      that.scrollTabHeader('left')
+    })
     
     //监听导航点击
     $('.layui-nav-child').on('click', 'a', function() {
       const target = $(this)
-      const url = target.data('url');
+      const url = target.data('url')
       const id = target.data('id')
-      if(!url) return;
+      if(!url) return
       const isActive = $('#LAY_app_tabsheader').find("li[lay-id=" + id + "]")
       if(isActive.length > 0) {
         //切换到选项卡

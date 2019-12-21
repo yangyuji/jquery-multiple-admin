@@ -34,6 +34,7 @@ body, html {
     border: none;
 
     li {
+      position: relative;
       min-width: 0;
       line-height: 40px;
       max-width: 160px;
@@ -47,13 +48,6 @@ body, html {
         background-color: #f6f6f6;
       }
 
-      &.layui-this:after {
-        width: 100%;
-        border: none;
-        height: 2px;
-        background-color: #292B34;
-      }
-
       &:hover:after {
         width: 100%;
       }
@@ -61,13 +55,15 @@ body, html {
       &:after {
         content: '';
         position: absolute;
-        top: 0;
+        bottom: 0;
+        top: unset;
         left: 0;
         width: 0;
         height: 2px;
         border-radius: 0;
         background-color: #292B34;
         transition: all .3s;
+        font-size: unset;
       }
 
       &.layui-this:after {
@@ -75,6 +71,18 @@ body, html {
         border: none;
         height: 2px;
         background-color: #292B34;
+      }
+
+      &:first-child {
+        padding-right: 15px;
+
+        .layui-tab-close {
+          display: none;
+        }
+      }
+
+      .layui-icon {
+        font-size: 14px;
       }
 
       .layui-tab-close {
@@ -84,7 +92,6 @@ body, html {
         height: 18px;
         line-height: 20px;
         margin-left: 8px;
-        top: 1px;
         text-align: center;
         font-size: 14px;
         color: #c2c2c2;
@@ -97,29 +104,49 @@ body, html {
         }
       }
     }
-
-    li:first-child {
-      padding-right: 15px;
-      
-      .layui-tab-close {
-        display: none;
-      }
-    }
   }
 
   .layui-icon-prev {
     left: 0;
     border-left: none;
     border-right: 1px solid #f6f6f6;
-  }
 
-  .layui-icon-down {
-    right: 0;
+    &:before {
+      font-size: 14px;
+      color: #999;
+    }
+    &:hover {
+      &:before {
+        color: #333;
+      }
+    }
   }
 
   .layui-icon-next {
     right: 40px;
     right: 40px;
+
+    &:before {
+      font-size: 14px;
+      color: #999;
+    }
+    &:hover {
+      &:before {
+        color: #333;
+      }
+    }
+  }
+
+  .layui-icon-down {
+    right: 0;
+    &:before {
+      color: #999;
+    }
+    &:hover {
+      &:before {
+        color: #333;
+      }
+    }
   }
 
   .layadmin-tabs-control {
