@@ -15,17 +15,28 @@ const oa = {
     layui.use('element', function () {
       const element = layui.element
       element.on('tab(layadmin-layout-tabs)', function(data){
-        that.tabChange($(this).attr('lay-id'))
+        that.tabBodyChange($(this).attr('lay-id'))
       })
       element.on('tabDelete(layadmin-layout-tabs)', function(data){
-        console.log(data.index)
+        // 删除iframe
+        $('#LAY_app_body').find('.layadmin-tabsbody-item').eq(data.index).remove()
+        // 改变左侧菜单
+        const url = $(this).parent().attr('lay-attr')
+        that.changeLeftNavItem(url)
       })
     })
     this.addEventListener()
   },
-  tabChange(id) {
+  tabBodyChange(id) {
     $('#LAY_app_body ' + '#tabsbody-item-' + id).addClass('layui-show').siblings().removeClass('layui-show')
     this.scrollTabHeader('auto', id)
+  },
+  changeLeftNavItem(url) {
+    // 修改左侧菜单项的样式
+    const a = $('#left-nav-tree').find('a[data-url="' + url + '"]')
+    a.parent().removeClass('layui-this')
+    const cur_url = $('#LAY_app_body .layui-show').find('iframe').eq(0).attr('src')
+    $('#left-nav-tree').find('a[data-url="' + cur_url + '"]').eq(0).parent().addClass('layui-this')
   },
   tabAdd(opt) {
     const element = layui.element
@@ -155,8 +166,8 @@ const oa = {
       if(!url) return
       const isActive = $('#LAY_app_tabsheader').find("li[lay-id=" + id + "]")
       if(isActive.length > 0) {
-        //切换到选项卡
-        that.tabChange(id)
+        // 点击标题切换到选项卡
+        isActive.eq(0).trigger('click')
       } else {
         // 新增选项卡
         that.tabAdd({ id: id, url: url, text: target.data('text') })
