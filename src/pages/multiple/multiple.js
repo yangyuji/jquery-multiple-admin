@@ -16,6 +16,7 @@ const oa = {
       const element = layui.element
       element.on('tab(layadmin-layout-tabs)', function(data){
         that.tabBodyChange($(this).attr('lay-id'))
+        that.changeLeftNavItem($(this).attr('lay-attr'))
       })
       element.on('tabDelete(layadmin-layout-tabs)', function(data){
         // 删除iframe
@@ -31,12 +32,16 @@ const oa = {
     $('#LAY_app_body ' + '#tabsbody-item-' + id).addClass('layui-show').siblings().removeClass('layui-show')
     this.scrollTabHeader('auto', id)
   },
-  changeLeftNavItem(url) {
+  changeLeftNavItem(rmv) {
+    // 删除全部
+    $('#LAY-app-menu .layui-this').removeClass('layui-this')
     // 修改左侧菜单项的样式
-    const a = $('#left-nav-tree').find('a[data-url="' + url + '"]')
-    a.parent().removeClass('layui-this')
+    if (rmv) {
+      const a = $('#LAY-app-menu').find('a[data-url="' + rmv + '"]')
+      a.parent().removeClass('layui-this')
+    }
     const cur_url = $('#LAY_app_body .layui-show').find('iframe').eq(0).attr('src')
-    $('#left-nav-tree').find('a[data-url="' + cur_url + '"]').eq(0).parent().addClass('layui-this')
+    $('#LAY-app-menu').find('a[data-url="' + cur_url + '"]').eq(0).parent().addClass('layui-this')
   },
   tabAdd(opt) {
     const element = layui.element
@@ -127,14 +132,14 @@ const oa = {
       dd.parent().removeClass('layui-show')
       const cmd = dd.data('event')
 
-
       if (cmd === 'closeThisTabs') {
-        const cur_header = $('#LAY_app_tabsheader ' + '.layui-this')
-        const cur_body = $('#LAY_app_body ' + '.layui-show')
+        const cur_header = $('#LAY_app_tabsheader .layui-this')
+        const cur_body = $('#LAY_app_body .layui-show')
         cur_header.prev().addClass('layui-this')
         cur_header.not('li[lay-id=desktop]').remove()
         cur_body.prev().addClass('layui-show')
         cur_body.not('#tabsbody-item-desktop').remove()
+        that.changeLeftNavItem(cur_header.attr('lay-attr'))
       }
       if (cmd === 'closeOtherTabs') {
         $('#LAY_app_tabsheader li:not(.layui-this)').not('li[lay-id=desktop]').remove()
@@ -143,10 +148,11 @@ const oa = {
       if (cmd === 'closeAllTabs') {
         const tab_header = $('#LAY_app_tabsheader li')
         const tab_body = $('#LAY_app_body .layadmin-tabsbody-item')
-        tab_header.not('li[lay-id=desktop]').remove()
+        tab_header.not('li[lay-id="desktop"]').remove()
         tab_body.not('#tabsbody-item-desktop').remove()
-        $('li[lay-id=desktop]').addClass('layui-this')
+        $('#LAY_app_tabsheader li[lay-id="desktop"]').addClass('layui-this')
         $('#tabsbody-item-desktop').addClass('layui-show')
+        that.changeLeftNavItem()
       }
     })
 
