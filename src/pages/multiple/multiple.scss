@@ -197,7 +197,7 @@ body, html {
 
   .layui-header {
     height: $--top-header-height;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .3);
 
     .layui-logo {
       width: 200px;
@@ -213,13 +213,22 @@ body, html {
     }
 
     .layui-nav.layui-layout-right {
-      > .layui-nav-item a {
-        padding: 0 15px;
+      > .layui-nav-item {
+        margin-left: 10px;
+        a {
+          padding: 0 10px;
+        }
+        &.user-item {
+          a {
+            padding-right: 20px;
+          }
+        }
       }
       .layui-badge {
         position: relative;
         margin: 0;
         padding: 0 3px;
+        height: 16px;
       }
     }
   }
@@ -229,7 +238,7 @@ body, html {
     top: $--top-header-height;
 
     &.layui-bg-black {
-      background-color: rgba(0, 0, 0, .7) !important;
+      background-color: rgba(0, 0, 0, .5) !important;
     }
 
     .layui-side-scroll {
@@ -252,7 +261,7 @@ body, html {
         z-index: 1;
 
         &.layui-nav-itemed > a {
-          background-color: rgba(32, 91, 158, .3);
+          background-color: rgba(32, 91, 158, .1);
         }
 
         .layui-nav-child {

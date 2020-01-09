@@ -1,3 +1,76 @@
 body {
   text-align: center;
+  background-color: #1d458d;
+
+  .login-box {
+    width: 800px;
+    height: 500px;
+    margin: 120px auto 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 0;
+
+    .login-left {
+      display: inline-block;
+      vertical-align: top;
+      width: 60%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+
+      .layui-elem-field {
+        height: 460px;
+
+        .layui-field-box {
+          font-size: 14px;
+          line-height: 1.5;
+          text-align: left;
+        }
+      }
+    }
+
+    .login-right {
+      display: inline-block;
+      vertical-align: top;
+      width: 40%;
+      height: 100%;
+      padding: 80px 10px 0 0;
+      box-sizing: border-box;
+
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .layui-form {
+        margin-top: 50px;
+        font-size: 13px;
+
+        .layui-form-label {
+          width: 68px;
+          padding: 8px 0;
+        }
+        .layui-input-inline {
+
+          input {
+            width: 228px;
+          }
+        }
+      }
+
+      .login-way {
+        margin-top: 20px;
+        padding-right: 20px;
+        text-align: right;
+
+        .layui-icon {
+          cursor: pointer;
+          display: inline-block;
+          margin-left: 20px;
+          font-size: 30px!important;
+          color: #999;
+        }
+      }
+    }
+  }
 }

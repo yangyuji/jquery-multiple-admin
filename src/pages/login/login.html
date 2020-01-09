@@ -6,12 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录页面</title>
     <link rel="stylesheet" type="text/css" href="./static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/layui/css/layui.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-    <div>登录页面</div>
+    <div class="login-box">
+        <div class="login-left">
+            <fieldset class="layui-elem-field">
+                <legend>使用说明</legend>
+                <div class="layui-field-box">
+                    基于webpack、es6和sass的多页面管理后台通用脚手架，可以在此基础上搭建多页面、后端渲染架构的管理后台系统。文件目录机构仿照微信小程序的单目录方式，方便开发调试。UI框架使用了layui，js技术框架可以采用jQuery、vuejs、Angular甚至react，无任何技术框架限制，方便灵活。有任何问题欢迎在我的github上提出：<a target="_blank" href="https://github.com/yangyuji/jquery-multiple-admin/issues">jquery-multiple-admin</a>
+                </div>
+            </fieldset>
+        </div>
+        <div class="login-right">
+            <h3>羊羽集的管理后台</h3>
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+            <div class="login-way">
+                <i class="layui-icon layui-icon-login-wechat"></i>
+                <i class="layui-icon layui-icon-login-qq"></i>
+                <i class="layui-icon layui-icon-login-weibo"></i>
+            </div>
+        </div>
+
+    </div>
+    <script src="./static/js/layui/layui.js"></script>
+    <script src="./static/js/jquery.min.js"></script>
 </body>
 </html>
