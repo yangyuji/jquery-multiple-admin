@@ -29,7 +29,7 @@ const oa = {
     this.addEventListener()
   },
   tabBodyChange(id) {
-    $('#LAY_app_body ' + '#tabsbody-item-' + id).addClass('layui-show').siblings().removeClass('layui-show')
+    $('#LAY_app_body #tabsbody-item-' + id).addClass('layui-show').siblings().removeClass('layui-show')
     this.scrollTabHeader('auto', id)
   },
   changeLeftNavItem(rmv) {
@@ -58,6 +58,20 @@ const oa = {
     })
     //标题切换到选项卡
     element.tabChange('layadmin-layout-tabs', opt.id)
+  },
+  gotoTabUrl(fresh, id, url, text) {
+    const isActive = $('#LAY_app_tabsheader li[lay-id=' + id + ']')
+    if(isActive.length > 0) {
+      // 点击标题切换到选项卡
+      isActive.eq(0).trigger('click')
+      if (fresh) {
+        const _iframe = $('#tabsbody-item-' + id + ' .layadmin-iframe')
+        _iframe.attr('src', _iframe.attr('src'))
+      }
+    } else {
+      // 新增选项卡
+      this.tabAdd({ id: id, url: url, text: text })
+    }
   },
   scrollTabHeader(type, id){
     var tabsHeader = $('#LAY_app_tabsheader')
@@ -165,19 +179,21 @@ const oa = {
     })
     
     //监听导航点击
-    $('.layui-nav-child').on('click', 'a', function() {
+    $('#LAY-app-menu').on('click', 'a[data-url]', function() {
       const target = $(this)
       const url = target.data('url')
       const id = target.data('id')
       if(!url) return
-      const isActive = $('#LAY_app_tabsheader').find("li[lay-id=" + id + "]")
-      if(isActive.length > 0) {
-        // 点击标题切换到选项卡
-        isActive.eq(0).trigger('click')
-      } else {
-        // 新增选项卡
-        that.tabAdd({ id: id, url: url, text: target.data('text') })
-      }
+      that.gotoTabUrl.call(that, true, id, url, target.data('text'))
+    })
+
+    // 头部导航点击
+    $('.layui-layout-right').on('click', 'a[data-url]', function() {
+      const target = $(this)
+      const url = target.data('url')
+      const id = target.data('id')
+      if(!url) return
+      that.gotoTabUrl.call(that, true, id, url, target.data('text'))
     })
 
     $('.open_shrink').click(function () {

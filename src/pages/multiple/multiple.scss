@@ -210,9 +210,11 @@ body, html {
 
     .layui-nav.layui-layout-left {
       left: 200px;
+      height: 60px;
     }
 
     .layui-nav.layui-layout-right {
+      height: 60px;
       > .layui-nav-item {
         margin-left: 10px;
         a {

@@ -1,13 +1,12 @@
 body {
   text-align: center;
-  background-color: #1d458d;
+  background-color: #123166;
 
   .login-box {
     width: 800px;
-    height: 500px;
+    height: 400px;
     margin: 120px auto 0 auto;
     background-color: #fff;
-    border-radius: 5px;
     font-size: 0;
 
     .login-left {
@@ -19,7 +18,7 @@ body {
       box-sizing: border-box;
 
       .layui-elem-field {
-        height: 460px;
+        height: 360px;
 
         .layui-field-box {
           font-size: 14px;
