@@ -1,8 +1,6 @@
-import "./table.scss";
-import $ from "jQuery"
+import "./table.scss"
 
 $(function () {
-  console.log($)
   layui.use('element')
 })
 

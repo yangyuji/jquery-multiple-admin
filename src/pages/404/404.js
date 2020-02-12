@@ -1,5 +1,4 @@
 import './404.scss'
-import $ from "jQuery";
 
 $(function () {
   if(top.location != self.location){

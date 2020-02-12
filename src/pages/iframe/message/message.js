@@ -1,5 +1,4 @@
-import "./message.scss";
-import $ from "jQuery"
+import "./message.scss"
 
 $(function () {
   layui.use('element')

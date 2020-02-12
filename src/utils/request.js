@@ -1,4 +1,3 @@
-import $ from 'jQuery'
 
 function request(options) {
   return new Promise(function (resolve, reject) {

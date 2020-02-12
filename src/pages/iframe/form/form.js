@@ -1,8 +1,7 @@
 import "./form.scss";
-import $ from "jQuery"
 
 $(function () {
-  console.log($)
+
   layui.use(['form', 'layedit', 'laydate', 'element'], function(){
     var form = layui.form
       ,layer = layui.layer

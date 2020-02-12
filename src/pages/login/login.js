@@ -1,6 +1,4 @@
 import './login.scss'
-import $ from 'jQuery'
-import layui from 'layui'
 
 $(function () {
   if(top.location != self.location){

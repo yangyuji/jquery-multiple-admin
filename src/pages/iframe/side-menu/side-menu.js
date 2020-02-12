@@ -1,8 +1,6 @@
-import "./side-menu.scss";
-import $ from "jQuery"
+import "./side-menu.scss"
 
 $(function () {
-  console.log($)
   layui.use('element')
 })
 

@@ -1,0 +1,46 @@
+
+.ui-draggable {
+  z-index: 9999999;
+}
+.droppable-active {
+  background-color: #ffe;
+}
+.draggable {
+  cursor: move;
+  * {
+    cursor: move;
+  }
+  a {
+    cursor: pointer!important;
+  }
+}
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  z-index: -1;
+
+  .ibox-title {
+    padding: 15px 5px;
+  }
+
+  .ibox-content {
+    clear: both;
+    background-color: #ffffff;
+    padding: 15px 10px;
+    border: 1px solid #e7eaec;
+    min-height: 400px;
+
+    .droppable {
+      min-height:400px;
+    }
+
+    .tools {
+      a {
+        cursor: pointer;
+        font-size: 80%;
+        color: #337ab7;
+      }
+    }
+  }
+}
